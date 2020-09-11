@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- 注册一个servlet -->
+    <!-- web访问的时候，会根据web.xml来找到servlet -->
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>net.zixue.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hi</url-pattern>
+    </servlet-mapping>
+</web-app>
