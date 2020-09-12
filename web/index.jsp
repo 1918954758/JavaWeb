@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  我被包含了
+  <%=request.getAttribute("message")%>
   </body>
 </html>

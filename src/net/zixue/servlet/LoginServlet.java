@@ -26,6 +26,13 @@ public class LoginServlet extends HttpServlet {
             //密码错误
             request.setAttribute("errMessage", "密码错误");
             request.getRequestDispatcher("/loginError.jsp").forward(request, response);
+        } else {
+            //账号密码正确
+            /*response.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY);
+            response.setHeader("Location", "https://www.baidu.com");*/
+            //response.sendRedirect("https://www.jd.com");
+            //response.sendRedirect("home.html");
+            response.sendRedirect("/hello/home.html");
         }
     }
 }
