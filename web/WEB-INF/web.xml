@@ -6,9 +6,17 @@
 
     <!-- 注册一个servlet -->
     <!-- web访问的时候，会根据web.xml来找到servlet -->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>utf-8</param-value>
+    </context-param>
     <servlet>
         <servlet-name>helloServlet</servlet-name>
         <servlet-class>net.zixue.servlet.HelloServlet</servlet-class>
+        <!--<init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>-->
     </servlet>
     <servlet-mapping>
         <servlet-name>helloServlet</servlet-name>

@@ -1,5 +1,6 @@
 package net.zixue.servlet;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,22 @@ import java.util.Enumeration;
  * @Date 2020/9/12 1:07
  */
 public class HelloServlet extends HttpServlet {
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        System.out.println(">>>>>>>>>>>>>>>>>>>init start<<<<<<<<<<<<<<<<<<");
+
+        ServletConfig servletConfig = this.getServletConfig();
+        String encoding = servletConfig.getInitParameter("encoding");
+        System.out.println("encoding:" + encoding);
+        Enumeration<String> initParameterNames = servletConfig.getInitParameterNames();
+        while(initParameterNames.hasMoreElements()){
+            String s = initParameterNames.nextElement();
+            System.out.println(s);
+        }
+        System.out.println(">>>>>>>>>>>>>>>>>>>init end<<<<<<<<<<<<<<<<<<");
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -75,6 +92,8 @@ public class HelloServlet extends HttpServlet {
         resp.setContentType("text/html; charset=utf-8");
         PrintWriter writer = resp.getWriter();
         writer.write(result);
+
+
     }
 
     @Override
